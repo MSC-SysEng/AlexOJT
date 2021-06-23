@@ -1,6 +1,6 @@
 #introduction
 
-print("\n Welcome to Hangman.")
+print("Welcome to Hangman.")
 print("Are you ready to play?")
 
 #library
