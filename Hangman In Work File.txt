@@ -36,20 +36,22 @@ def hangman():
         count += 1
         if count == 1:
             print("1")
+            print("Wrong guess. " + str(limit - count) + " guesses remaining.")
         elif count ==2:
             print("2")		  
-            print("This is an incorrect guess. " + str(limit - count) + " guesses remaining\n")
+            print("This is an incorrect guess. " + str(limit - count) + " guesses remaining.")
         elif count == 3:
             print("3")
+            print("Wrong guess. " + str(limit - count) + " guesses remaining.")
         elif count == 4:
             print("4")
-            print("Wrong guess. " + str(limit - count) + " guesses remaining\n")
+            print("Wrong guess. " + str(limit - count) + " guesses remaining.)
         elif count == 5:
            print("5")
-           print("Wrong guess. " + str(limit - count) + " guesses remaining\n")
+           print("Wrong guess. " + str(limit - count) + " guesses remaining.")
         elif count == 6:
             print("6")
-            print("Wrong guess. " + str(limit - count) + " last guess remaining\n")
+            print("Wrong guess. " + str(limit - count) + " last guess remaining.")
         elif count == 7:
             print("    _____   \n"
                   "   |     |  \n"
