@@ -1,0 +1,79 @@
+#introduction
+
+print("\n Welcome to Hangman.")
+print("Are you ready to play?")
+
+#library
+
+with open ('doc.txt','r') as mytext:
+	print(mytext.readlines())
+
+#word selection
+
+
+#Build gallows (change to 7 tries)
+
+def hangman():
+    ###variables
+    count = int
+    display
+    word
+    already_guessed
+    play_game
+
+
+    
+    limit = 7
+    guess = input("Your word is: " + display + " Enter your guess: \n")
+    guess = guess.strip()
+    if len(guess.strip()) == 0 or len(guess.strip()) >= 2 or guess <= "9":
+        print("This is not a valid guess, Try a letter\n")
+        hangman()
+    elif guess in word:
+        already_guessed.extend([guess])
+        index = word.find(guess)
+        word = word[:index] + "_" + word[index + 1:]
+        display = display[:index] + guess + display[index + 1:]
+        print(display + "\n")
+    elif guess in already_guessed:
+        print("Please enter your next guess:")
+    else:
+        count += 1
+        if count == 1:
+            print("1")
+        elif count ==2:
+            print("2")		  
+            print("This is an incorrect guess. " + str(limit - count) + " guesses remaining\n")
+        elif count == 3:
+            print("3")
+        elif count == 4:
+            print("4")
+            print("Wrong guess. " + str(limit - count) + " guesses remaining\n")
+        elif count == 5:
+           print("5")
+           print("Wrong guess. " + str(limit - count) + " guesses remaining\n")
+        elif count == 6:
+            print("6")
+            print("Wrong guess. " + str(limit - count) + " last guess remaining\n")
+        elif count == 7:
+            print("    _____   \n"
+                  "   |     |  \n"
+                  "   |     |  \n"
+                  "   |     O  \n"
+                  "   |    /|\ \n"
+                  "   |    / \ \n"
+                  "   |        \n"
+                  "___|___     \n")
+            print("You lose")
+            print("The word was:",already_guessed,word)
+            play_loop()
+    if word == display:
+        print("Congratulations you win")
+
+#replay
+
+while True:
+	hangman()
+	if input("Do you want to play again. Y or N?")strip().upper()!="Y":
+		break
+		
