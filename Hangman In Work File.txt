@@ -1,6 +1,6 @@
 #introduction
 
-print("\n Welcome to Hangman.")
+print("Welcome to Hangman.")
 print("Are you ready to play?")
 
 #library
@@ -14,15 +14,13 @@ with open ('doc.txt','r') as mytext:
 #Build gallows (change to 7 tries)
 
 def hangman():
-    ###variables
+    #variables
     count = int
     display
     word
     already_guessed
     play_game
 
-
-    
     limit = 7
     guess = input("Your word is: " + display + " Enter your guess: \n")
     guess = guess.strip()
@@ -40,40 +38,35 @@ def hangman():
     else:
         count += 1
         if count == 1:
-            print("1")
+        		print"1"
         elif count ==2:
-            print("2")		  
-            print("This is an incorrect guess. " + str(limit - count) + " guesses remaining\n")
+            print"2"		  
+            print("Wrong guess. " + str(limit - count) + " guesses remaining.")
         elif count == 3:
-            print("3")
+            print"3"
+        		print("Wrong guess. " + str(limit - count) + " guesses remaining.")
         elif count == 4:
-            print("4")
-            print("Wrong guess. " + str(limit - count) + " guesses remaining\n")
+            print"4"
+            print("Wrong guess. " + str(limit - count) + " guesses remaining.")
         elif count == 5:
-           print("5")
-           print("Wrong guess. " + str(limit - count) + " guesses remaining\n")
+           	print"5"
+          	print("Wrong guess. " + str(limit - count) + " guesses remaining.")
         elif count == 6:
-            print("6")
-            print("Wrong guess. " + str(limit - count) + " last guess remaining\n")
+            print"6"
+            print("Wrong guess. " + str(limit - count) + " last guess remaining.")
         elif count == 7:
-            print("    _____   \n"
-                  "   |     |  \n"
-                  "   |     |  \n"
-                  "   |     O  \n"
-                  "   |    /|\ \n"
-                  "   |    / \ \n"
-                  "   |        \n"
-                  "___|___     \n")
+          	new_str = "\n".join(["    _____   ", "   |     |  ", "   |     |  ", "   |     O  ", "    |    /|\ ", "    |    / \ ", "    |        ", " ___|___     "])
             print("You lose")
             print("The word was:",already_guessed,word)
-            play_loop()
+#remove?		
+						play_loop()
     if word == display:
         print("Congratulations you win")
 
 #replay
 
-while True:
-	hangman()
-	if input("Do you want to play again. Y or N?")strip().upper()!="Y":
-		break
-		
+repeat = True
+while repeat:
+ 	print "You lose!"
+  if input("Play again? (y/n) ") == "n":
+        repeat = False
