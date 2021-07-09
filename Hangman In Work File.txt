@@ -39,6 +39,7 @@ def hangman():
         count += 1
         if count == 1:
         		print"1"
+                print("Wrong guess. " + str(limit - count) + " guesses remaining.")
         elif count ==2:
             print"2"		  
             print("Wrong guess. " + str(limit - count) + " guesses remaining.")
