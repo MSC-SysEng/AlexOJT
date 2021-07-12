@@ -1,17 +1,9 @@
-#introduction
-
-print("Welcome to Hangman.")
-print("Are you ready to play?")
-
-#library
-
 with open ('doc.txt','r') as mytext:
-	print(mytext.readlines())
-
-#word selection
-
-
-#Build gallows (change to 7 tries)
+    alltext = myText.read()
+    word = list(map(str,allText.split()))
+	#print(mytext.readlines())
+ #or
+    print(random.choice(word))
 
 def hangman():
     #variables
@@ -35,39 +27,42 @@ def hangman():
         print(display + "\n")
     elif guess in already_guessed:
         print("Please enter your next guess:")
+    
+    #Build gallows (change to 7 tries)
+
     else:
         count += 1
         if count == 1:
-        		print"1"
-                print("Wrong guess. " + str(limit - count) + " guesses remaining.")
+            print("1")
+            print("Wrong guess. " + str(limit - count) + " guesses remaining.")
         elif count ==2:
-            print"2"		  
+            print("2")		  
             print("Wrong guess. " + str(limit - count) + " guesses remaining.")
-        elif count == 3:
-            print"3"
-        		print("Wrong guess. " + str(limit - count) + " guesses remaining.")
+        elif count ==3:
+            print("3")		  
+            print("Wrong guess. " + str(limit - count) + " guesses remaining.")
         elif count == 4:
-            print"4"
+            print("4")
             print("Wrong guess. " + str(limit - count) + " guesses remaining.")
-        elif count == 5:
-           	print"5"
-          	print("Wrong guess. " + str(limit - count) + " guesses remaining.")
+        elif count ==5:
+            print("5")		  
+            print("Wrong guess. " + str(limit - count) + " guesses remaining.")
         elif count == 6:
-            print"6"
+            print("6")
             print("Wrong guess. " + str(limit - count) + " last guess remaining.")
         elif count == 7:
           	new_str = "\n".join(["    _____   ", "   |     |  ", "   |     |  ", "   |     O  ", "    |    /|\ ", "    |    / \ ", "    |        ", " ___|___     "])
-            print("You lose")
-            print("The word was:",already_guessed,word)
+        print("You lose")
+        print("The word was:",already_guessed,word)
 #remove?		
-						play_loop()
-    if word == display:
-        print("Congratulations you win")
+				#play_loop()
+        if word == display:
+            print("Congratulations you win")
 
 #replay
 
 repeat = True
 while repeat:
- 	print "You lose!"
-  if input("Play again? (y/n) ") == "n":
+    print("You lose!")
+    if input("Play again? (y/n) ") == "n":
         repeat = False
