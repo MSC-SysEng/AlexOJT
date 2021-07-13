@@ -59,13 +59,10 @@ def hangman():
           	new_str = "\n".join(["    _____   ", "   |     |  ", "   |     |  ", "   |     O  ", "    |    /|\ ", "    |    / \ ", "    |        ", " ___|___     "])
         print("You lose")
         print("The word was:",already_guessed,word)
-#remove?		
-				#play_loop()
         if word == display:
             print("Congratulations you win")
 
 #replay
-
 repeat = True
 while repeat:
     print("You lose!")
