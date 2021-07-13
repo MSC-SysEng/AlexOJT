@@ -1,3 +1,8 @@
+#introduction
+
+print("Welcome to hangman.")
+print("Are you ready to play?")
+
 with open ('doc.txt','r') as mytext:
     alltext = myText.read()
     word = list(map(str,allText.split()))
