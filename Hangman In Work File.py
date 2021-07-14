@@ -4,22 +4,23 @@ print("Welcome to hangman.")
 print("Are you ready to play?")
 
 with open ('doc.txt','r') as mytext:
+    import random
     alltext = mytext.read()
     word = list(map(str,alltext.split()))
     print(mytext.readlines())
 
-   #print(random.choice(word))
+    print(random.choice(word))
 
 def hangman():
     #variables
     count = int
-    display
-    word
-    already_guessed
-    play_game
+    display = ""
+    word = ""
+    already_guessed =""
+
 
     limit = 7
-    guess = input("Your word is: " + display + " Enter your guess: \n")
+    guess = input("Your word is: " + word + " Enter your guess: \n")
     guess = guess.strip()
     if len(guess.strip()) == 0 or len(guess.strip()) >= 2 or guess <= "9":
         print("This is not a valid guess, Try a letter\n")
