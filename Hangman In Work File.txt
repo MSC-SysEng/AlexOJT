@@ -4,11 +4,11 @@ print("Welcome to hangman.")
 print("Are you ready to play?")
 
 with open ('doc.txt','r') as mytext:
-    alltext = myText.read()
-    word = list(map(str,allText.split()))
-	#print(mytext.readlines())
- #or
-    print(random.choice(word))
+    alltext = mytext.read()
+    word = list(map(str,alltext.split()))
+    print(mytext.readlines())
+
+   #print(random.choice(word))
 
 def hangman():
     #variables
@@ -32,7 +32,7 @@ def hangman():
         print(display + "\n")
     elif guess in already_guessed:
         print("Please enter your next guess:")
-    
+
     #Build gallows (change to 7 tries)
 
     else:
@@ -41,16 +41,16 @@ def hangman():
             print("1")
             print("Wrong guess. " + str(limit - count) + " guesses remaining.")
         elif count ==2:
-            print("2")		  
+            print("2")
             print("Wrong guess. " + str(limit - count) + " guesses remaining.")
         elif count ==3:
-            print("3")		  
+            print("3")
             print("Wrong guess. " + str(limit - count) + " guesses remaining.")
         elif count == 4:
             print("4")
             print("Wrong guess. " + str(limit - count) + " guesses remaining.")
         elif count ==5:
-            print("5")		  
+            print("5")
             print("Wrong guess. " + str(limit - count) + " guesses remaining.")
         elif count == 6:
             print("6")
